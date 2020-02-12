@@ -37,6 +37,6 @@ nav a{
   margin: 0 1em 0 1em;
   padding: 0 0 0.2em 0;}
   :hover{
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border-top: 1px solid rgb(114, 202, 230);
+    border-bottom: 1px solid rgb(114, 202, 230);
   }

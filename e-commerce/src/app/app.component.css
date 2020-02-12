@@ -1,0 +1,5 @@
+div{
+background: black;
+background: -webkit-linear-gradient(to bottom, #212250  , rgba(79, 162, 230, 0.9));  
+background: linear-gradient(to bottom, #212250  , rgba(79, 162, 230, 0.9));  
+}
