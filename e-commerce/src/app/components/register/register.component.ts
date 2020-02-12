@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from '../../../app/core/services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { passwordMatch } from 'src/app/shared/directives/password-match';
-import { IUser } from 'src/app/interfaces/user';
+import { IUser } from '../../shared/interfaces/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,9 @@ export class RegisterComponent implements OnInit {
   registerForm:FormGroup;
 
   constructor(private userService: UserService,
-     private fb:FormBuilder) {
+    private fb: FormBuilder,
+    private router: Router
+  ) {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required]],
       firstName: ['', [Validators.required, Validators.minLength(3)]],
@@ -30,7 +33,7 @@ export class RegisterComponent implements OnInit {
   }
   registerUser() {
     this.userService.registerUser(this.registerForm.value).subscribe((user) => {
-        console.log(user)
+        this.router.navigate(['/login'])
     })
   }
 
