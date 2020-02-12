@@ -1,0 +1,16 @@
+.error {
+    color:darkred;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.success{
+    color: green;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.ng-touched.ng-invalid{
+    border-color: darkred;
+}
+.ng-touched.ng-valid{
+    border-color: green;
+}

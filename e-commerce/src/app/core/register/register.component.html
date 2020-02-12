@@ -1,5 +1,5 @@
 <div class="login-container">
-    <form action="" class="form-login">
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="form-login">
         <ul class="login-nav">
             <li class="login-nav__item active">
                 <a routerLink="/register">Register</a>
@@ -8,30 +8,33 @@
                 <a routerLink="/login">Login</a>
             </li>
         </ul>
-        <label for="login-input-user" class="login__label">
-            Email
-        </label>
-        <input id="login-input-user" class="login__input" type="text" />
+        <label for="login-input-user" class="login__label">Email</label>
+        <input formControlName="email" 
+        pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+         id="login-input-user" class="login__input" type="text" />
+        <div *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched"  class="error">
+            Your email address is invalid!
+        </div>
         <label for="login-input-user" class="login__label">
             First Name
         </label>
-        <input id="login-input-user" class="login__input" type="text" />
+        <input formControlName="firstName" id="login-input-user" class="login__input" type="text" />
         <label for="login-input-user" class="login__label">
-			Last Name
-		</label>
-		<input id="login-input-user" class="login__input" type="text" />
-        <label for="login-input-password" class="login__label">
+            Last Name
+        </label>
+        <input formControlName="lastName" id="login-input-user" class="login__input" type="text" />
+        <label formControlName="password" for="login-input-password" class="login__label">
             Password
         </label>
 
         <input id="login-input-password" class="login__input" type="password" />
-        <label for="login-input-password" class="login__label">
+        <label formControlName="rePassword" for="login-input-password" class="login__label">
             Re-Password
         </label>
 
         <input id="login-input-password" class="login__input" type="password" />
         <label for="login-sign-up" class="login__label--checkbox">
         </label>
-        <button class="login__submit">Register</button>
+        <button [disabled]="registerForm.invalid" class="login__submit">Register</button>
     </form>
 </div>
