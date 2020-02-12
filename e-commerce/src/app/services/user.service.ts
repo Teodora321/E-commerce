@@ -15,13 +15,5 @@ export class UserService {
     
   }
 }
-// registerUser(user: UserRegisterDTO): Observable<UserDTO> {
-//   return this.http.post<UserDTO>(`${API_URL}/users`, user)
-//      .pipe(
-//         tap(({ username, email }) => {
-//            this.storageService.setItem('email', email);
-//            this.storageService.setItem('username', username);
-//         })
-//      );
-// }
+
 

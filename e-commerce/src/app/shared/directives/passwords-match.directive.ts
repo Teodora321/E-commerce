@@ -8,7 +8,8 @@ import { passwordMatch } from './password-match';
     {
       provide: NG_VALIDATORS,
       useExisting: PasswordMatchDirective,
-      multi: true
+      multi: true,
+      
     }
   ]
 })

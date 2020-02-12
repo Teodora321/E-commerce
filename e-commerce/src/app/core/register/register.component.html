@@ -22,19 +22,18 @@
         <label for="login-input-user" class="login__label">
             Last Name
         </label>
-        <input formControlName="lastName" id="login-input-user" class="login__input" type="text" />
-        <label formControlName="password" for="login-input-password" class="login__label">
+        <input  formControlName="lastName" id="login-input-user" class="login__input" type="text" />
+        <div formGroupName="passwords">
+        <label  for="login-input-password" class="login__label">
             Password
         </label>
-
-        <input id="login-input-password" class="login__input" type="password" />
-        <label formControlName="rePassword" for="login-input-password" class="login__label">
+        <input formControlName="password" id="login-input-password" class="login__input"  type="password" />
+        <label for="login-input-password" class="login__label">
             Re-Password
         </label>
-
-        <input id="login-input-password" class="login__input" type="password" />
-        <label for="login-sign-up" class="login__label--checkbox">
-        </label>
-        <button [disabled]="registerForm.invalid" class="login__submit">Register</button>
+        <input formControlName="rePassword" id="login-input-password" class="login__input" type="password" />
+       </div>
+        <button [disabled]="registerForm.invalid" type="submit" class="login__submit">Register</button>
+        {{registerForm.value | json}}
     </form>
 </div>
