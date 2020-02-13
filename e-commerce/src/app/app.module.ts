@@ -15,6 +15,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContactComponent } from './components/contact/contact.component';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     NotFoundComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ContactComponent
 
   ],
   imports: [
@@ -35,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     CoreModule,
     SharedModule,
+    ProductsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
