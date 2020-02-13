@@ -35,10 +35,11 @@ const routes: Routes = [
       isLogged: false
     }
   },
-  {
-    path: "**",
-    component: NotFoundComponent
-  }
+//   {
+//     path: "**",
+//     component: NotFoundComponent
+// }
+ 
 ];
 
 @NgModule({
