@@ -14,8 +14,8 @@ export class ProductListComponent implements OnInit {
   constructor(private productService:ProductService) { }
 
   ngOnInit() {
-    this.productService.getAllProducts().subscribe(products => {
-      console.log(products)
+    this.productService.getAllProducts().subscribe(data => {
+      this.products = data.slice();
     })
   }
 
