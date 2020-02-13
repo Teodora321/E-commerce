@@ -1,5 +1,5 @@
 <div class="login-container">
-	<form [formGroup]="loginForm" (ngSubmit) = "loginUser()">
+	<form [formGroup]="loginForm" (ngSubmit) = "loginUser()" class="form-login">
 		<ul class="login-nav">
 			<li class="login-nav__item active">
 				<a routerLink="/login">Login</a>
@@ -11,11 +11,11 @@
 		<label for="login-input-user" class="login__label">
 			Email
 		</label>
-		<input id="login-input-user" class="login__input" type="text" />
+		<input formControlName="email" id="login-input-user" class="login__input" type="text" />
 		<label for="login-input-password" class="login__label">
 			Password
 		</label>
-		<input id="login-input-password" class="login__input" type="password" />
+		<input formControlName="password" id="login-input-password" class="login__input" type="password" />
 		<label for="login-sign-up" class="login__label--checkbox">	
 		</label>
 		<button class="login__submit" >Login</button>

@@ -67,8 +67,8 @@ module.exports = {
         },
 
         login: (req, res, next) => {
-            const { email, passwords } = req.body;
-            let password = passwords.password
+            const { email, password } = req.body;
+            console.log(req.body)
             models.User.findOne({ email })
                 .then((user) => Promise.all([user, user.matchPassword(password)]))
                 .then(([user, match]) => {

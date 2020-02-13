@@ -14,7 +14,7 @@ export class UserService {
     return this.http.post<IUser>('http://localhost:9999/api/user/register', user)
   }
   loginUser(user: IUser) {
-    return this.http.post<IUser>('http://localhost:9999/api/user/register', user)
+    return this.http.post<IUser>('http://localhost:9999/api/user/login', user)
   }
 }
 

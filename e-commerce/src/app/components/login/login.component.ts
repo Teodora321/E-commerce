@@ -23,7 +23,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   loginUser() {
-    
+    this.userService.loginUser(this.loginForm.value).subscribe((user) => {
+      this.router.navigate(['/'])
+    })
   }
 
 }
