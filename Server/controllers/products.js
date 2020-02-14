@@ -6,10 +6,11 @@ module.exports = {
             .then(products => res.send(products))
             .catch(next)
     },
-    // getDetails : (req,res,next) =>{
-    //     const query  = {_id: req.params.id};
-    //     models.Item.findById(query)
-    //     .then(item=> res.send(item))
-    //     .catch(next)
-    // }
+    getDetails : (req,res,next) =>{
+        // const query = { _id:  };
+        //console.log(query)
+        models.Product.findById(req.params.id)
+        .then(item=> res.send(item))
+        .catch(next)
+    }
 }

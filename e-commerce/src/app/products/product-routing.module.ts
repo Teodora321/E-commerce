@@ -11,12 +11,10 @@ const routes: Routes = [
                 path: 'products',
                 pathMatch: 'full',
                 component: ProductListComponent
-
             },
             {
                 path: 'detail/:id',
                 component: ProductDetailsComponent,
-
             },
     
         ]

@@ -22,6 +22,7 @@ import { trigger, style, animate, transition ,query, stagger } from '@angular/an
 export class ProductListComponent implements OnInit {
   
   products: IProduct[];
+  product: IProduct;
 
   constructor(private productService:ProductService) { }
 
@@ -30,9 +31,12 @@ export class ProductListComponent implements OnInit {
       this.products = data.slice();
     })
   }
-  selectProductHandler(product: IProduct) {
-    this.productService.selectProduct(product);
-    console.log(product);
+  selectProductHandler(id: number) {
+    this.productService.getCurrentProduct(id).subscribe(data => {
+      console.log(data)
+      this.product = data;
+    })
+    
   }
 
 }

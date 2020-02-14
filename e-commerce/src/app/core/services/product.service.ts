@@ -18,8 +18,8 @@ export class ProductService {
     return this.http.get<IProduct[]>('http://localhost:9999/api/product/products')
   }
 
-  selectProduct(product: IProduct) {
-    (this as any).selectedProduct = product;
+  getCurrentProduct(id: number) {
+    return this.http.get<IProduct>(`http://localhost:9999/api/product/detail/${id}`)
   }
 
 }

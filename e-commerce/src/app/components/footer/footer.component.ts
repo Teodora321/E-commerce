@@ -11,5 +11,9 @@ export class FooterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { }
+
+  backToTop() {
+    window.scrollTo(0,0)
+  }
 }
 
