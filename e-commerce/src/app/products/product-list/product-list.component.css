@@ -2,7 +2,6 @@
 #products {
 	width: 100%;
 }
-
 #products .container {
 	display: block;
 	width: 80%;
@@ -20,7 +19,7 @@
 	padding: 2rem 1rem;
 	text-transform: uppercase;
 	font-family: "Franklin Gothic Medium";
-	color: #000000;
+	color:white;
 	font-size: 1.875rem;
 	font-weight: 400;
 	letter-spacing: 0.2rem;
@@ -30,13 +29,12 @@
 
 #products .container .products-header p {
 	font-family: Cambria;
-	color: rgba(89, 89, 89, 1);
+	color: white;
 	font-size: 1rem;
 	font-style: italic;
 	line-height: 1.5;
 	text-align: center;
 }
-
 #products .container .product {
 	width: 25%;
 	display: inline-block;
@@ -47,7 +45,6 @@
 	transform: scale(1);
 	opacity: 1;
 }
-
 #products .container .product:hover {
 	-webkit-transform: scale(0.9);
 	transform: scale(0.9);
@@ -60,15 +57,13 @@
 	transition: transform 1s ease-in-out 0s, -webkit-transform 1s ease-in-out 0s;
 	cursor: pointer;
 }
-
 #products .container .product figure img {
 	width: 100%;
 	height: auto;
 }
-
 #products .container .product figure figcaption {
 	font-family: "Franklin Gothic Medium";
-	color: rgba(89, 89, 89, 1);
+	color:white;
 	font-size: 0.8rem;
 	font-weight: 600;
 	letter-spacing: 0.02rem;
@@ -76,21 +71,18 @@
 	padding: 1rem 0rem 0rem;
 	text-transform: uppercase;
 }
-
 @media only screen and (max-width: 1024px) {
 	#products .container .product {
 		width: 50%;
 		padding: 3rem;
 	}
 }
-
 @media only screen and (max-width: 768px) {
 	#products .container .product {
 		width: 50%;
 		padding: 2rem;
 	}
 }
-
 @media only screen and (max-width: 480px) {
 	#products .container .product {
 		width: 100%;

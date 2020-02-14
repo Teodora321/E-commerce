@@ -30,5 +30,9 @@ export class ProductListComponent implements OnInit {
       this.products = data.slice();
     })
   }
+  selectProductHandler(product: IProduct) {
+    this.productService.selectProduct(product);
+    console.log(product);
+  }
 
 }
