@@ -8,8 +8,8 @@ import { ProductService } from 'src/app/core/services/product.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  get selectedProduct(){return this.productService.selectedProduct}
-  constructor(private productService:ProductService) { }
+  
+  constructor() { }
 
   ngOnInit() {
   }
