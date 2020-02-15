@@ -1,36 +1,41 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { tap, shareReplay } from 'rxjs/operators';
 import { IUser } from '../../shared/interfaces/user';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
   currentUser: IUser;
 
-  get isLogged() { return !!this.currentUser;}
+  get isLogged() { return !!this.currentUser; }
 
-  constructor(private http: HttpClient) { 
-    this.http.get('api/auth').subscribe((user: any )=> {
+  authCompleted$ = this.http.get('api/auth').pipe(shareReplay(1));
+
+  constructor(private http: HttpClient) {
+    this.authCompleted$.subscribe((user: any) => {
       this.currentUser = user;
     }, () => {
-        this.currentUser = null; //in case that we don't have a user
-    })
-    
+      this.currentUser = null;
+    });
   }
-  
-  registerUser(user: IUser): Observable<IUser> {
-    return this.http.post<IUser>('user/register',user, {withCredentials:true})
+
+  loginUser(email: string, password: string) {
+    return this.http.post('user/login', { email, password }).pipe(tap((user: any) => {
+      this.currentUser = user;
+      console.log(user)
+    }));
   }
-  loginUser(user: IUser) {
-    return this.http.post<IUser>('user/login', user, {withCredentials:true})
+
+  registerUser(email: string, password: string) {
+    return this.http.post('user/register', { email, password });
   }
-  logout() {
-    return this.http.post<IUser>('user/logout', {}, {withCredentials:true})
+
+  logoutUser() {
+    return this.http.post('user/logout', {}).pipe(tap(() => {
+      this.currentUser = null;
+    }));
   }
 }
-
-
-
-

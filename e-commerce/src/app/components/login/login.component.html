@@ -1,5 +1,5 @@
 <div class="login-container">
-	<form [formGroup]="loginForm" (ngSubmit) = "loginUser()" class="form-login">
+	<form [formGroup]="loginForm" (ngSubmit) = "loginUser(loginForm.value)" class="form-login">
 		<ul class="login-nav">
 			<li class="login-nav__item active">
 				<a routerLink="/login">Login</a>

@@ -70,7 +70,7 @@ module.exports = {
             const { email, password } = req.body;
             console.log(req.body)
             models.User.findOne({ email })
-                .then((user) => Promise.all([user, user.matchPassword(password)]))
+                .then((user) => !!user ? Promise.all([user, user.matchPassword(password)]) : [null, false])
                 .then(([user, match]) => {
                     if (!match) {
                         res.status(401).send('Invalid password');
@@ -89,7 +89,7 @@ module.exports = {
             console.log('-'.repeat(100));
             models.TokenBlacklist.create({ token })
                 .then(() => {
-                    res.clearCookie(config.authCookieName).send('Logout successfully!');
+                    res.clearCookie(config.authCookieName).send({ logoutSuccess: true });
                 })
                 .catch(next);
         },

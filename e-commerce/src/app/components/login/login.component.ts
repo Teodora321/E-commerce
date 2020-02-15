@@ -22,10 +22,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-  loginUser() {
-    this.userService.loginUser(this.loginForm.value).subscribe(() => {
-      this.router.navigate(['/'])
-    }, console.error)
+  loginUser({ email, password }: { email: string, password: string }) {
+    this.userService.loginUser(email, password).subscribe(() => {
+      this.router.navigate(['']);
+    }, console.error);
+  }
   }
 
-}
+
