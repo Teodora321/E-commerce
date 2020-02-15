@@ -1,21 +1,21 @@
 <section class="section">
     <div class="container">
         <div class="product-box">
-            <h2 class="title product-title">For gamers by gamers TEE</h2>
-            <div class="product-box-main-img">
-                <img src="https://s10.postimg.org/txrz4miyx/product-main.jpg" alt="product image">
+        <h2 class="title product-title">{{selectedProduct | json}}</h2>
+            <div class="product-box-main-img">  
+                <img src={{selectedProduct.imageUrl}} alt="product image">
             </div>
             <div class="product-details">
                 <div class="product-row product-details-sku">
                 </div>
                 <div class="product-row product-details-price">
-                    <div class="price price-sale">$19.99</div>
+                <div class="price price-sale">{{selectedProduct.price}}</div>
                 </div>
                 <div class="product-row product-details-rate-share">
                 </div>
                 <div class="product-row product-details-description">
                     <div class="sm-show xs-hide prod-details">DETAILS:</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                <p>{{selectedProduct.description}}</p>
                 </div>
                 <div class="product-row add-to-cart">
                     <a href="#" class="btn btn-add">add to cart</a>

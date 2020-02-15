@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  selectedProduct: IProduct;
 
+   selectedProduct: IProduct;
 
   constructor(private http: HttpClient) { }
   
@@ -20,6 +20,9 @@ export class ProductService {
 
   getCurrentProduct(id: number) {
     return this.http.get<IProduct>(`http://localhost:9999/api/product/detail/${id}`)
+  }
+  selectProduct(product: IProduct) {
+   return this.selectedProduct = product;
   }
 
 }
