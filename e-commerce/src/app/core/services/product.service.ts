@@ -15,11 +15,11 @@ export class ProductService {
   constructor(private http: HttpClient) { }
   
   getAllProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>('http://localhost:9999/api/product/products')
+    return this.http.get<IProduct[]>('product/products')
   }
 
   getCurrentProduct(id: number) {
-    return this.http.get<IProduct>(`http://localhost:9999/api/product/detail/${id}`)
+    return this.http.get<IProduct>(`product/detail/${id}`)
   }
   selectProduct(product: IProduct) {
    return this.selectedProduct = product;
