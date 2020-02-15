@@ -4,9 +4,9 @@
         <a routerLink="product/products">Products</a>
         <a routerLink="/about">About</a>
         <span routerLink="/" >Shopify</span>
-        <a *ngIf="!isLogged" routerLink="/login">Login</a>
-        <a *ngIf="!isLogged" routerLink="/register">Register</a>
-        <a *ngIf="isLogged" routerLink="/user/profile">Profile</a>
+        <a  routerLink="/login">Login</a>
+        <a  routerLink="/register">Register</a>
+        <a *ngIf="isLogged" routerLink="/profile">Profile</a>
         <a *ngIf="isLogged" routerLink="/product/cart">Cart</a>
         <a routerLink="/contact">Contact</a>
         <a *ngIf="isLogged" click()="logout()">Logout</a>
