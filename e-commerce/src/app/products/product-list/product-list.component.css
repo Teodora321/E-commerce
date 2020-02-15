@@ -8,7 +8,25 @@
 	margin: 0 auto;
 	font-size: 0;
 }
+.login__submit {
+	color: #ffffff;
+	font-size: 1rem;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 1rem;
+	padding: .75rem;
+	border-radius: 2rem;
+	display: block;
+	width: 100%;
+    background-color: rgb(114, 202, 230);
+	border: none;
+	cursor: pointer;
+}
 
+.login__submit:hover {
+	background-color: rgba(17, 97, 237, 1);
+}
 #products .container .products-header {
 	font-size: 16px;
 	text-align: center;

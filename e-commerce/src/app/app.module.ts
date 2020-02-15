@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProductsModule } from './products/products.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NotFoundComponent,
     LoginComponent,
     RegisterComponent,
-    ContactComponent
+    ContactComponent,
+    UserProfileComponent
 
   ],
   imports: [
