@@ -1,28 +1,23 @@
-<section class="section">
-    <div class="container">
-        <div class="product-box">
-        <h2 class="title product-title">{{selectedProduct | json}}</h2>
-            <div class="product-box-main-img">  
-                <img src={{selectedProduct.imageUrl}} alt="product image">
-            </div>
-            <div class="product-details">
-                <div class="product-row product-details-sku">
-                </div>
-                <div class="product-row product-details-price">
-                <div class="price price-sale">{{selectedProduct.price}}</div>
-                </div>
-                <div class="product-row product-details-rate-share">
-                </div>
-                <div class="product-row product-details-description">
-                    <div class="sm-show xs-hide prod-details">DETAILS:</div>
-                <p>{{selectedProduct.description}}</p>
-                </div>
-                <div class="product-row add-to-cart">
-                    <a href="#" class="btn btn-add">add to cart</a>
-                </div>
-            </div>
+<div id="content">
 
-        </div>
-
+    <div id="picture">
+        <img class="img" alt="img"
+            src={{selectedProduct.imageUrl}}>
     </div>
-</section>
+    <div id="information">
+        <div id="title" class="titleBorder titleSpace">
+            <h3>{{selectedProduct.title}}</h3>
+        </div>
+        <div id="price" class="titleBorder priceNumber">
+        <b>{{selectedProduct.price}} $</b>
+        </div>
+        <div id="discription" class="lightFont textFormat">
+            <p>
+               {{selectedProduct.description}}
+            </p>
+        </div>
+        <div>
+            <button id="addToCartButton" class="addButton" ng-click="addToCart()">ADD TO CART</button>
+        </div>
+    </div>
+</div>

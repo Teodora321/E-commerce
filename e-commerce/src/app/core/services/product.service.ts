@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-   selectedProduct: IProduct;
+   readonly selectedProduct: IProduct;
 
   constructor(private http: HttpClient) { }
   
@@ -22,7 +22,7 @@ export class ProductService {
     return this.http.get<IProduct>(`product/detail/${id}`)
   }
   selectProduct(product: IProduct) {
-   return this.selectedProduct = product;
+   return (this as any).selectedProduct = product;
   }
 
 }

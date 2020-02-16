@@ -2,6 +2,7 @@ import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { IProduct } from 'src/app/shared/interfaces/product';
 import { ProductService } from '../../core/services/product.service';
 import { trigger, style, animate, transition ,query, stagger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -24,7 +25,8 @@ export class ProductListComponent implements OnInit {
   products: IProduct[];
   product: IProduct;
   
-  constructor(private productService:ProductService) { }
+  constructor(private productService: ProductService,
+   private router:Router) { }
 
   ngOnInit() {
     this.productService.getAllProducts().subscribe(data => {
@@ -33,9 +35,9 @@ export class ProductListComponent implements OnInit {
   }
   selectProductHandler(id: number) {
     this.productService.getCurrentProduct(id).subscribe(data => {
-      console.log(data)
       this.productService.selectProduct(data)
       this.product = data;
+      this.router.navigate([`product/products/detail/${id}`])
     })
     
   }
