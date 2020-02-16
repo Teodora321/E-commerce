@@ -1,1 +1,25 @@
 <p>user-profile works!</p>
+<div class="login-container">
+    <form [formGroup]="profileForm" (ngSubmit)="editUser(profileForm.value)" class="form-login">
+        <label for="login-input-user" class="login__label">Email</label>
+        <input formControlName="email" 
+        value={{currentUser.email}}
+        pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+         id="login-input-user" class="login__input" type="text" />
+        <div *ngIf="profileForm.get('email').invalid && profileForm.get('email').touched"  class="error">
+            Your email address is invalid!
+        </div>
+        <label for="login-input-user" class="login__label">
+            First Name
+        </label>
+     <input value={{currentUser.firstName}} formControlName="firstName" id="login-input-user" class="login__input" type="text" />
+        <label for="login-input-user" class="login__label">
+            Last Name
+        </label>
+        <input  value={{currentUser.lastName}} formControlName="lastName" id="login-input-user" class="login__input" type="text" />
+        <br>
+        <button [disabled]="profileForm.invalid" type="submit" class="login__submit">Edit Profile</button>
+        <button type="submit" (click)="deleteUser(currentUser._id)" class="login__submit">Delete Profile</button>
+        {{profileForm.value | json}}
+    </form>
+    </div>

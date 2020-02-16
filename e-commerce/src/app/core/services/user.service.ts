@@ -38,4 +38,16 @@ export class UserService {
       this.currentUser = null;
     }));
   }
+  editUser(email: string, firstName: string, lastName: string) {
+    return this.http.put('user/id', { email, firstName, lastName })
+
+  };
+  deleteUser(id: number) {
+    
+    return this.http.delete(`user/${id}`).pipe(tap(() => {
+      console.log(id)
+    }))
+
+  }
+
 }

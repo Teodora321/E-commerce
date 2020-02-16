@@ -52,8 +52,12 @@ module.exports = {
 
     delete: (req, res, next) => {
         const id = req.params.id;
+        console.log(id)
         models.User.deleteOne({ _id: id })
             .then((removedUser) => res.send(removedUser))
+            .then(() => {
+                res.clearCookie(config.authCookieName)
+            })
             .catch(next)
     },
 
