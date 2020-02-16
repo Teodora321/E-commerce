@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css', '../../error-styles.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm:FormGroup;
+  registerForm: FormGroup;
 
   constructor(private userService: UserService,
     private fb: FormBuilder,
@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
       lastName: ['', [Validators.required, Validators.minLength(3)]],
       passwords: this.fb.group({
         password: ['', [Validators.required, Validators.minLength(6)]],
-        rePassword: ['', [Validators.required,Validators.minLength(6)]]
+        rePassword: ['', [Validators.required, Validators.minLength(6)]]
       }, {
         validators: [passwordMatch]
       })
@@ -31,8 +31,8 @@ export class RegisterComponent implements OnInit {
   }
   ngOnInit() {
   }
-  registerUser({ email, passwords: { password } }: { email: string, passwords: { password: string } }) {
-    this.userService.registerUser(email, password).subscribe(() => {
+  registerUser({ email, firstName, lastName, passwords: { password } }: { email: string, firstName, lastName, passwords: { password: string } }) {
+    this.userService.registerUser(email, firstName, lastName, password).subscribe(() => {
       this.router.navigate(['login']);
     }, console.error);
   }

@@ -29,8 +29,8 @@ export class UserService {
     }));
   }
 
-  registerUser(email: string, password: string) {
-    return this.http.post('user/register', { email, password });
+  registerUser(email: string,firstName:string,lastName:string, password: string) {
+    return this.http.post('user/register', { email, password,firstName,lastName });
   }
 
   logoutUser() {
@@ -38,12 +38,13 @@ export class UserService {
       this.currentUser = null;
     }));
   }
-  editUser(email: string, firstName: string, lastName: string) {
-    return this.http.put('user/id', { email, firstName, lastName })
+  editUser(id:number, data:IUser) {
+    return this.http.put<IUser>(`user/${this.currentUser._id}`, data).pipe(tap(() => {
+      console.log(id)
+    }))
 
   };
   deleteUser(id: number) {
-    
     return this.http.delete(`user/${id}`).pipe(tap(() => {
       console.log(id)
     }))

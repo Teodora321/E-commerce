@@ -17,7 +17,9 @@ module.exports = {
 
     put: (req, res, next) => {
         const id = req.params.id;
+        console.log(id)
         const { firstName, lastName, email } = req.body;
+        console.log(req.body)
         const query = { firstName, lastName, email }
         models.User.findOneAndUpdate({ _id: id }, query, { new: true })
             .then((updatedUser) => res.send(updatedUser))
@@ -63,9 +65,9 @@ module.exports = {
 
     post: {
         register: (req, res, next) => {
-            const { email, passwords, firstName, lastName } = req.body;
-            let password = passwords.password
-            models.User.create({email, password, firstName, lastName })
+            const { email, firstName, lastName, password } = req.body;
+            console.log(req.body);
+            models.User.create({ email, firstName, lastName, password })
                 .then((createdUser) => res.send(createdUser))
                 .catch(next)
         },

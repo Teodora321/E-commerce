@@ -18,7 +18,7 @@
         </label>
         <input  value={{currentUser.lastName}} formControlName="lastName" id="login-input-user" class="login__input" type="text" />
         <br>
-        <button [disabled]="profileForm.invalid" type="submit" class="login__submit">Edit Profile</button>
+        <button (click)="editUser(currentUser._id)" type="submit" class="login__submit">Edit Profile</button>
         <button type="submit" (click)="deleteUser(currentUser._id)" class="login__submit">Delete Profile</button>
         {{profileForm.value | json}}
     </form>

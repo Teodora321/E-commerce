@@ -12,7 +12,8 @@ import { IUser } from 'src/app/shared/interfaces/user';
 })
 export class UserProfileComponent implements OnInit {
   profileForm: FormGroup;
-  
+  user: IUser;
+
   get currentUser(){
       return this.userService.currentUser
   }
@@ -23,15 +24,19 @@ export class UserProfileComponent implements OnInit {
     this.profileForm = this.fb.group({
       email: ['', [Validators.required]],
       firstName: ['', [Validators.required, Validators.minLength(3)]],
-      lastName: ['', [Validators.required, Validators.minLength(3)]],});
+      lastName: ['', [Validators.required, Validators.minLength(3)]],
+    });
+    
   }
   ngOnInit() { 
     console.log(this.currentUser)
   }
    
-  editUser({ email, firstName, lastName}: { email: string, firstName:string, lastName:string }) {
-    this.userService.editUser(email, firstName, lastName).subscribe(() => {
-      //this.router.navigate(['login']);
+  
+  editUser(id) {
+    let userValue = this.profileForm.value;
+    this.userService.editUser(id, userValue).subscribe(() => {
+      this.router.navigate(['/']);
     }, console.error);
 
   }
