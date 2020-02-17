@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap, shareReplay } from 'rxjs/operators';
 import { IUser } from '../../shared/interfaces/user';
+import { IProduct } from 'src/app/shared/interfaces/product';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +39,7 @@ export class UserService {
       this.currentUser = null;
     }));
   }
-  editUser(id:number, data:IUser) {
+  editUser(id:number, data) {
     return this.http.put(`user/${this.currentUser._id}`, data).pipe(tap(() => {
       console.log(id)
     }))
@@ -46,9 +47,16 @@ export class UserService {
   };
   deleteUser(id: number) {
     return this.http.delete(`user/${id}`).pipe(tap(() => {
-      console.log(id)
+      this.currentUser = null;
     }))
+  };
 
+  addToCart(product: IProduct) {
+    return this.http.put(`user/add/${this.currentUser._id}`, product)
   }
+  getCartItems() {
+    return this.http.get(`user/get/${this.currentUser._id}`)
+  }
+  
 
 }

@@ -7,10 +7,9 @@ module.exports = {
             .catch(next)
     },
     getDetails : (req,res,next) =>{
-        // const query = { _id:  };
-        //console.log(query)
         models.Product.findById(req.params.id)
         .then(item=> res.send(item))
         .catch(next)
-    }
+    },
+    
 }

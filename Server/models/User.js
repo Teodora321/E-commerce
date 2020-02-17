@@ -29,10 +29,10 @@ const userSchema = new Schema({
         required: true
     },
 
-    // cart: [{
-    //     type:String,
-    //     required: true
-    // }]
+    cart: [{
+        type:String,
+        required: true
+    }]
 
 });
 

@@ -23,10 +23,10 @@ const productSchema = new Schema({
         type: String,
         required:true
     },
-    // user: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'User'
-    // }
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 
 
 });

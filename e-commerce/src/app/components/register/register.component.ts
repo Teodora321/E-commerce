@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { passwordMatch } from 'src/app/shared/directives/password-match';
 import { IUser } from '../../shared/interfaces/user';
 import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/core/services/notification.service';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(private userService: UserService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private notificationService:NotificationService
   ) {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required]],
@@ -34,6 +36,9 @@ export class RegisterComponent implements OnInit {
   registerUser({ email, firstName, lastName, passwords: { password } }: { email: string, firstName, lastName, passwords: { password: string } }) {
     this.userService.registerUser(email, firstName, lastName, password).subscribe(() => {
       this.router.navigate(['login']);
-    }, console.error);
+      this.notificationService.success('Account successfully created!')
+    }, () => {
+        this.notificationService.error('Something went wrong, please try again!')
+    });
   }
 }

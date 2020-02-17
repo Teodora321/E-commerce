@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-product-cart',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-cart.component.css']
 })
 export class ProductCartComponent implements OnInit {
-
-  constructor() { }
+  
+  get currentUser() {
+    return this.userService.currentUser;
+  }
+  constructor(private userService:UserService) { }
 
   ngOnInit() {
+    this.userService.getCartItems().subscribe((data) => {
+      console.log(data)
+    })
   }
+
 
 }
