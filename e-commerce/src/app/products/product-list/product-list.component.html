@@ -8,7 +8,7 @@
             <div [@productsAnimation] = "products.length">
             <figure> <img src={{product.imageUrl}}>
                 <figcaption>{{product.title}}</figcaption>
-                <figcaption>$ {{product.price}}</figcaption>
+                <figcaption>$ {{product.price}}.00</figcaption>
               <button (click)="selectProductHandler(product._id)" class="login__submit">Details</button>
             </figure>
         </div>

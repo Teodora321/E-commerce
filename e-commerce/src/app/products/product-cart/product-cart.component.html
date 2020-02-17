@@ -2,7 +2,7 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 <body>
-  <div id="wrap">
+  <div id="wrap"  *ngIf="products.length>0">
     <div id="cart_layout_2">
       <h1>Shopping Cart</h1>
       <div class="cart_details" *ngFor="let product of products">
@@ -24,14 +24,14 @@
         <div class="qty">
           <h3>Qty</h3>
           <div class="center">
-            <input for="qty" />
+            <input value="1"/>
 
           </div>
         </div>
         <div class="total">
           <h3>Total</h3>
           <div class="center">
-          <span>{{product.price}} </span>
+          <span>{{product.price}}.00 </span>
           </div>
         </div>
         <div class="remove">
@@ -52,7 +52,7 @@
       <div class="checkout">
         <div class="subtotal">
           <h2>Subtotal:</h2>
-          <span class="finalprice">$99.95</span>
+          <span class="finalprice">{{products}}</span>
           <a class="refresh"><i class="fa fa-refresh"></i></a>
         </div>
         <div class="complete">
@@ -69,5 +69,6 @@
       </div>
     </div>
   </div>
+  <div *ngIf="products.length<=0"> Your cart is empty!</div>
 
 </body>
