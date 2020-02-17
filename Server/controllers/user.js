@@ -27,7 +27,7 @@ module.exports = {
     add: (req, res, next) => {
         const userId = req.params.id;
         const product = req.body;
-
+        console.log(product)
         models.User.updateOne({ _id: userId }, { $push: { cart: product } })
             .then(resp => console.log(resp))
         
@@ -35,8 +35,7 @@ module.exports = {
 
     getCartItems: (req, res, next) => {
         const userId = req.params.id;
-        console.log(userId)
-        models.User.find({ _id: userId })
+        models.User.find({ _id: userId }).populate('cart')
             .then(data => {
                 console.log(data)
                 const { cart } = data[0]
@@ -74,7 +73,7 @@ module.exports = {
         login: (req, res, next) => {
             const { email, password } = req.body;
             console.log(req.body)
-            models.User.findOne({ email })
+            models.User.findOne({ email }).populate('cart')
                 .then((user) => !!user ? Promise.all([user, user.matchPassword(password)]) : [null, false])
                 .then(([user, match]) => {
                     if (!match) {
