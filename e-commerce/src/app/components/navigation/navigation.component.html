@@ -9,6 +9,6 @@
         <a *ngIf="isLogged" routerLink="/profile">Profile</a>
         <a *ngIf="isLogged" routerLink="/product/cart">Cart</a>
         <a routerLink="/contact">Contact</a>
-        <a *ngIf="isLogged" click="logou()">Logout</a>
+        <a *ngIf="isLogged" (click)="logout()">Logout</a>
     </nav>
 </header>

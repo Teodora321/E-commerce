@@ -39,7 +39,7 @@ export class UserService {
     }));
   }
   editUser(id:number, data:IUser) {
-    return this.http.put<IUser>(`user/${this.currentUser._id}`, data).pipe(tap(() => {
+    return this.http.put(`user/${this.currentUser._id}`, data).pipe(tap(() => {
       console.log(id)
     }))
 

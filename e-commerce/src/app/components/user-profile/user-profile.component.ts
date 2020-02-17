@@ -17,6 +17,7 @@ export class UserProfileComponent implements OnInit {
   get currentUser(){
       return this.userService.currentUser
   }
+
   constructor(private userService: UserService,
     private fb: FormBuilder,
     private router: Router
@@ -36,6 +37,7 @@ export class UserProfileComponent implements OnInit {
   editUser(id) {
     let userValue = this.profileForm.value;
     this.userService.editUser(id, userValue).subscribe(() => {
+      this.profileForm.setValue(userValue);
       this.router.navigate(['/']);
     }, console.error);
 
