@@ -37,12 +37,12 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     CoreModule,
     SharedModule,
     ProductsModule,
+    AppRoutingModule,
     
   ],
   providers: [{
