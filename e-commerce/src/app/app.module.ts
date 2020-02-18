@@ -14,7 +14,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProductsModule } from './products/products.module';
@@ -38,12 +37,13 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     CoreModule,
     SharedModule,
     ProductsModule,
-    AppRoutingModule,
+    
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

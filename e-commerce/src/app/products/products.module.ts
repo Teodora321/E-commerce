@@ -9,7 +9,8 @@ import { ProductCartComponent } from './product-cart/product-cart.component';
   declarations: [ProductListComponent, ProductDetailsComponent, ProductCartComponent],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    
   ],
   exports:[ProductListComponent, ProductDetailsComponent]
 })
