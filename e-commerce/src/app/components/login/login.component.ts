@@ -12,9 +12,9 @@ import { NotificationService } from 'src/app/core/services/notification.service'
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   constructor(private userService: UserService,
-    private notificationService: NotificationService,
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private notificationService: NotificationService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required]],
