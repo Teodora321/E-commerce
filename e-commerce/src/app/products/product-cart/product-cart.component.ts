@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { UserService } from 'src/app/core/services/user.service';
 import { IProduct } from 'src/app/shared/interfaces/product';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-cart',
@@ -17,7 +16,7 @@ export class ProductCartComponent implements OnInit {
   }
   products: any;
   constructor(private userService: UserService,
-  private router:Router) { }
+   ) { }
 
   ngOnInit() {
     this.userService.getCartItems().subscribe((data) => {
@@ -26,9 +25,8 @@ export class ProductCartComponent implements OnInit {
     })
   }
   deleteCart() {
-    this.userService.deleteCartItems(this.products).subscribe((data) => {
-      console.log(data)
-      this.router.navigate([''])
+    this.userService.deleteCartItems(this.products).subscribe(() => {
+
     })
     
   }
