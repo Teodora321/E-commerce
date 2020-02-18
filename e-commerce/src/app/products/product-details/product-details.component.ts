@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/core/services/product.service';
 import { IProduct } from 'src/app/shared/interfaces/product';
 import { UserService } from 'src/app/core/services/user.service';
-import { NotificationService } from 'src/app/core/services/notification.service';
 
 @Component({
   selector: 'app-product-details',
@@ -15,12 +14,11 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(private productService: ProductService,
     private userService: UserService,
-    private notificationService: NotificationService) { }
+    ) { }
   ngOnInit() {
   }
   addToCart() {
     this.userService.addToCart(this.selectedProduct).subscribe(() => {
-     // this.notificationService.success("Added to the cart!")
     })
   }
 
