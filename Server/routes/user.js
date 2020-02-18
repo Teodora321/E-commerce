@@ -15,9 +15,6 @@ router.put('/:id', controllers.user.put);
 
 router.put('/add/:id', controllers.user.add); //add item to cart
 router.get('/get/:id', controllers.user.getCartItems); //get 
-
-
-
-// router.put('/deleteCart/:id', controllers.user.deleteCart);
+router.put('/deleteCart/:id', controllers.user.deleteCart);
 
 module.exports = router;

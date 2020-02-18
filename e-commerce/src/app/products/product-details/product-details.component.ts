@@ -18,12 +18,10 @@ export class ProductDetailsComponent implements OnInit {
     private notificationService: NotificationService) { }
   ngOnInit() {
   }
-  add() {
+  addToCart() {
     this.userService.addToCart(this.selectedProduct).subscribe(() => {
-      // this.notificationService.success("Added to the cart!")
-      
+     // this.notificationService.success("Added to the cart!")
     })
-    //this.userService.editUser(id, data)
   }
 
 }

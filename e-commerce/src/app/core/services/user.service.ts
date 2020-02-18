@@ -57,6 +57,9 @@ export class UserService {
   getCartItems() {
     return this.http.get(`user/get/${this.currentUser._id}`)
   }
+  deleteCartItems(product:IProduct) {
+    return this.http.put(`user/deleteCart/${this.currentUser._id}`,product)
+  }
   
 
 }

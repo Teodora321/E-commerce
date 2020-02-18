@@ -47,7 +47,7 @@ module.exports = {
         const userId = req.params.id;
         console.log(userId)
         models.User.findOneAndUpdate({ _id: userId }, { cart: [] })
-            .then(resp => res.send(resp))
+            .then(resp => console.log(resp))
     },
 
     delete: (req, res, next) => {
