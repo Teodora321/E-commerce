@@ -1,6 +1,6 @@
 body{
   font-family: 'Open Sans', sans-serif;
-  background:#f1f2f3;
+  /* background:#f1f2f3; */
 }
 img{
   max-width:100%;
@@ -374,5 +374,12 @@ img{
   margin-top:20px;
 }
   
+}
+.text{
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+  text-align: center;
+
 }
 

@@ -14,8 +14,8 @@
 	width: 100%;
 	max-width: 525px;
 	min-height: 680px;
-	background-image: url(https://static.toiimg.com/photo/59632433/.jpg);
-	box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+	background-image: url(https://s.yimg.com/ny/api/res/1.2/0mniMbon9o80bA_AaT954Q--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9NzAwO2g9NzQ5O2lsPXBsYW5l/http://l.yimg.com/os/653/2012/11/30/comp-jpg_121003.jpg);
+	box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.15);
 }
 
 .login-container:after {
@@ -28,7 +28,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-image: radial-gradient(ellipse at left bottom, rgba(22, 24, 47, 1) 0%,rgba(27, 71, 121, 0.9) 59%, rgba(17, 27, 75, .9) 100%);
+	background-image: radial-gradient(ellipse at left bottom, rgba(22, 24, 47, 1) 0%,rgba(39, 97, 163, 0.9) 59%, rgba(17, 27, 75, .9) 100%);
 	box-shadow: 0 -20px 150px -20px rgba(0, 0, 0, 0.5);
 }
 

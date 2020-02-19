@@ -9,7 +9,7 @@ import { NotificationService } from 'src/app/core/services/notification.service'
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  styleUrls: ['./user-profile.component.css',  '../../error-styles.css']
 })
 export class UserProfileComponent implements OnInit {
   profileForm: FormGroup;
@@ -39,7 +39,7 @@ export class UserProfileComponent implements OnInit {
   editUser(id) {
     let userValue = this.profileForm.value;
     this.userService.editUser(id, userValue).subscribe(() => {
-      this.profileForm.setValue(userValue);
+      //this.profileForm.setValue(userValue);
       this.router.navigate(['/']);
       this.notificationService.success('Account successfully updated!')
     }, () => {
