@@ -56,7 +56,7 @@
           <a class="refresh"><i class="fa fa-refresh"></i></a>
         </div>
         <div class="complete">
-          <button class="button"  routerLink="/" (click)="deleteCart(products)">Checkout</button>
+          <button class="login__submit"  routerLink="/" (click)="deleteCart(products)">Checkout</button>
         </div>
       </div>
       <div class="update mobile">
@@ -71,7 +71,7 @@
   </div>
   <div  class="text" *ngIf="products.length<=0"> 
     <h1>Your cart is empty!</h1>
-    <button routerLink="/product/products"> Go back shopping</button>
+    <button class="login__submit" routerLink="/product/products"> Go back shopping</button>
   </div>
 
 </body>

@@ -31,10 +31,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: UserProfileComponent,
-    // canActivate: [AuthGuard],
-    // data: {
-    //   isLogged: true
-    // }
+    canActivate: [AuthGuard],
+    data: {
+      isLogged: true
+    }
     
   },
   {
