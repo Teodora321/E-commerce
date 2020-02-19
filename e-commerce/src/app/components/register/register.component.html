@@ -13,16 +13,22 @@
         pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
          id="login-input-user" class="login__input" type="text" />
         <div *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched"  class="error">
-            Your email address is invalid!
+            Please, provide a valid email address!
         </div>
         <label for="login-input-user" class="login__label">
             First Name
         </label>
         <input formControlName="firstName" id="login-input-user" class="login__input" type="text" />
+        <div *ngIf="registerForm.get('firstName').invalid && registerForm.get('firstName').touched"  class="error">
+            Please, provide a valid name!
+        </div>
         <label for="login-input-user" class="login__label">
             Last Name
         </label>
         <input  formControlName="lastName" id="login-input-user" class="login__input" type="text" />
+        <div *ngIf="registerForm.get('lastName').invalid && registerForm.get('lastName').touched"  class="error">
+            Please, provide a valid name!
+        </div>
         <div formGroupName="passwords">
         <label  for="login-input-password" class="login__label">
             Password
@@ -32,8 +38,11 @@
             Re-Password
         </label>
         <input formControlName="rePassword" id="login-input-password" class="login__input" type="password" />
+        
+        <div *ngIf="registerForm.get('passwords').invalid && registerForm.get('passwords').touched"  class="error">
+            Both passwords should match!
+        </div>
        </div>
         <button [disabled]="registerForm.invalid" type="submit" class="login__submit">Register</button>
-        {{registerForm.value | json}}
     </form>
 </div>

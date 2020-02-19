@@ -7,7 +7,7 @@ import { NotificationService } from 'src/app/core/services/notification.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css',  '../../error-styles.css']
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     })
   }
 
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.userService.loginUser(email, password).subscribe(() => {
       this.router.navigate(['']);
       this.notificationService.success('Welcome to Shopify')
-    }, () => this.notificationService.error('You have entered an invalid username or password'))
+    }, () => this.notificationService.error('Incorrect combination of email and password.'))
   }
 }
 

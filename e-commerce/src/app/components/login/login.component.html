@@ -11,13 +11,21 @@
 		<label for="login-input-user" class="login__label">
 			Email
 		</label>
-		<input formControlName="email" id="login-input-user" class="login__input" type="text" />
+		<input formControlName="email"  
+		pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+		id="login-input-user" class="login__input" type="text" />
+		<div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched"  class="error">
+            Please, provide a valid email address!
+        </div>
 		<label for="login-input-password" class="login__label">
 			Password
 		</label>
+		<div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched"  class="error">
+            Password is required and should be at least 6 chars!
+        </div>
 		<input formControlName="password" id="login-input-password" class="login__input" type="password" />
 		<label for="login-sign-up" class="login__label--checkbox">	
 		</label>
-		<button class="login__submit" >Login</button>
+		<button [disabled]="loginForm.invalid" class="login__submit" >Login</button>
 	</form>
 </div>
