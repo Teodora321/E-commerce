@@ -27,11 +27,10 @@ module.exports = {
     add: (req, res, next) => {
         const userId = req.params.id;
         const product = req.body;
-        console.log(product)
         models.User.updateOne({ _id: userId }, { $push: { cart: product } })
-            .then(resp => console.log(resp))
-        
+            .then(resp => console.log(resp))  
     },
+    
 
     getCartItems: (req, res, next) => {
         const userId = req.params.id;
@@ -45,14 +44,12 @@ module.exports = {
 
     deleteCart: (req, res, next) => {
         const userId = req.params.id;
-        console.log(userId)
         models.User.findOneAndUpdate({ _id: userId }, { cart: [] })
             .then(resp => console.log(resp))
     },
 
     delete: (req, res, next) => {
         const id = req.params.id;
-        console.log(id)
         models.User.deleteOne({ _id: id })
             .then((removedUser) => res.send(removedUser))
             .then(() => {
@@ -64,7 +61,6 @@ module.exports = {
     post: {
         register: (req, res, next) => {
             const { email, firstName, lastName, password } = req.body;
-            console.log(req.body);
             models.User.create({ email, firstName, lastName, password })
                 .then((createdUser) => res.send(createdUser))
                 .catch(next)
@@ -72,7 +68,6 @@ module.exports = {
 
         login: (req, res, next) => {
             const { email, password } = req.body;
-            console.log(req.body)
             models.User.findOne({ email }).populate('cart')
                 .then((user) => !!user ? Promise.all([user, user.matchPassword(password)]) : [null, false])
                 .then(([user, match]) => {

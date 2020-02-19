@@ -19,7 +19,7 @@ import { ToastrModule } from 'ngx-toastr';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     })
-  ]
+  ],
   
 })
 export class CoreModule { }

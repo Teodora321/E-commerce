@@ -11,9 +11,9 @@ router.post('/logout', controllers.user.post.logout);
 
 router.delete('/:id', controllers.user.delete);
 router.put('/:id', controllers.user.put);
-// router.get('/:id', controllers.user.get);
 
 router.put('/add/:id', controllers.user.add); //add item to cart
+//router.put('/delete/:id', controllers.user.deleteItem)
 router.get('/get/:id', controllers.user.getCartItems); //get 
 router.put('/deleteCart/:id', controllers.user.deleteCart);
 

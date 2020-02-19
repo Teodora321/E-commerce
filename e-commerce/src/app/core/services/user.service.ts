@@ -54,6 +54,7 @@ export class UserService {
   addToCart(product: IProduct) {
     return this.http.put(`user/add/${this.currentUser._id}`, product)
   }
+  
   getCartItems() {
     return this.http.get(`user/get/${this.currentUser._id}`)
   }

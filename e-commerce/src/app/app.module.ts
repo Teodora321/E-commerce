@@ -43,7 +43,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     SharedModule,
     ProductsModule,
     AppRoutingModule,
-    
+
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
