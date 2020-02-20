@@ -40,14 +40,9 @@ export class UserService {
     }));
   }
 
-  getCurrentUser(id:number) {
-    return this.http.get<IUser>(`/user/${id}`)
-  }
-
   editUser(id:number, updatedUser) {
     return this.http.patch(`user/${this.currentUser._id}`, updatedUser).pipe(tap((updatedUser:any) => {
       this.currentUser=updatedUser
-      console.log(id)
     }))
 
   };

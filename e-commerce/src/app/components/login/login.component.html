@@ -20,10 +20,10 @@
 		<label for="login-input-password" class="login__label">
 			Password
 		</label>
+		<input formControlName="password" id="login-input-password" class="login__input" type="password" />
 		<div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched"  class="error">
             Password is required and should be at least 6 chars!
         </div>
-		<input formControlName="password" id="login-input-password" class="login__input" type="password" />
 		<label for="login-sign-up" class="login__label--checkbox">	
 		</label>
 		<button [disabled]="loginForm.invalid" class="login__submit" >Login</button>
