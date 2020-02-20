@@ -19,6 +19,7 @@ const routes: Routes = [
             },
             {
                 path: 'cart',
+                pathMatch:'full',
                 component: ProductCartComponent,
                 canActivate: [AuthGuard],
                 data: {

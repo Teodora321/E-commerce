@@ -12,6 +12,6 @@ import { ProductCartComponent } from './product-cart/product-cart.component';
     CommonModule,
     ProductRoutingModule,
   ],
-  exports:[ProductListComponent, ProductDetailsComponent]
+  exports:[ProductListComponent, ProductDetailsComponent,ProductCartComponent]
 })
 export class ProductsModule { }

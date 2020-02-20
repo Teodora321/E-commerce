@@ -42,7 +42,7 @@ export class UserService {
 
   editUser(id:number, updatedUser) {
     return this.http.patch(`user/${this.currentUser._id}`, updatedUser).pipe(tap((updatedUser:any) => {
-      this.currentUser=updatedUser
+      this.currentUser=updatedUser 
     }))
 
   };

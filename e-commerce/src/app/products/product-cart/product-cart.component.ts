@@ -9,20 +9,23 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class ProductCartComponent implements OnInit {
 
-  //@ViewChild('qtyInput', { static: false }) qtyInput: ElementRef<HTMLInputElement>;
-  
+
   get currentUser() {
     return this.userService.currentUser;
   }
-  
+
   products: any;
+  total: number; 
+
   constructor(private userService: UserService,
-   ) { }
+  ) { }
 
   ngOnInit() {
     this.userService.getCartItems().subscribe((data) => {
       this.products = Object.values(data);
-      console.log(Object.values(data))
+      this.total = this.products
+        .map(item => item.price)
+        .reduce((a, b) => a + b, 0)
     })
   }
   deleteCart() {

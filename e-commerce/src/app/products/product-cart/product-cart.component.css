@@ -118,32 +118,21 @@ img{
   float:left;
   border-bottom:1px solid #ccc;
 }
-.update .coupon h2{
-  width:35%;
-  float:left;
-  font-size:18px;
-}
-.update .coupon input{
-  width:28%;
-  margin-left:2%;
-  float:left;
-  margin-top:10px;
-  border:1px solid #ccc;
-  border-radius:3px;
-  height:30px;
-}
+
 .shipping{
   width:100%;
   float:left;
 }
-.update .coupon .button{
-  width:28%;
-  margin-left:2%;
-  float:left;
-  display:inline-block;
-  margin-top:10px;
-  border-radius:3px;
+#text{
+  color:white;
+  
 }
+#shopping{
+  color: #3c6d99;
+  font-style:italic;
+  font-family: fantasy;
+}
+
 .shipping h3{
   font-size:18px;
 }

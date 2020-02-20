@@ -2,36 +2,35 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 <body>
-  <div id="wrap"  *ngIf="products.length>0">
+  <div id="wrap" *ngIf="products.length>0">
     <div id="cart_layout_2">
-      <h1>Shopping Cart</h1>
+      <h1 id=text>Shopping Cart</h1>
       <div class="cart_details" *ngFor="let product of products">
         <div class="item">
-        <h3>{{product.title}}</h3>
+          <h3>{{product.title}}</h3>
           <div class="product_image">
             <img src={{product.imageUrl}} />
           </div>
           <div class="product_details">
-          <span></span>
+            <span></span>
           </div>
         </div>
         <div class="price">
           <h3>Price</h3>
           <div class="center">
-          <span>{{product.price}}</span>
+            <span>{{product.price}}</span>
           </div>
         </div>
         <div class="qty">
           <h3>Qty</h3>
           <div class="center">
-            <input value="1"/>
-
+            1
           </div>
         </div>
         <div class="total">
           <h3>Total</h3>
           <div class="center">
-          <span>{{product.price}}.00 </span>
+            <span>{{product.price}}.00 </span>
           </div>
         </div>
         <div class="remove">
@@ -45,34 +44,24 @@
     <div class="complete_cart">
       <div class="update">
         <div class="coupon">
-          <h2></h2>
-
+          <h2 id="shopping"> We hope you enjoy your shopping experience</h2>
         </div>
 
       </div>
       <div class="checkout">
         <div class="subtotal">
-          <h2>Subtotal:</h2>
-          <span class="finalprice">{{products}}</span>
+          <h2>Subtotal: {{total}}.00</h2>
           <a class="refresh"><i class="fa fa-refresh"></i></a>
         </div>
         <div class="complete">
-          <button class="login__submit"  routerLink="/" (click)="deleteCart(products)">Checkout</button>
+          <button class="login__submit" routerLink="/" (click)="deleteCart(products)">Checkout</button>
         </div>
       </div>
-      <div class="update mobile">
-        <div class="coupon">
-          <h2>Coupon Code</h2>
-          <input type="text" />
-          <a class="button" href="#">Update Cart</a>
-        </div>
-       
-      </div>
+
     </div>
   </div>
-  <div  class="text" *ngIf="products.length<=0"> 
+  <div class="text" *ngIf="products.length<=0">
     <h1>Your cart is empty!</h1>
     <button class="login__submit" routerLink="/product/products"> Go back shopping</button>
   </div>
-
 </body>
