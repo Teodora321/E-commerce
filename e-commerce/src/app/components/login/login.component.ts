@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.userService.loginUser(email, password).subscribe(() => {
       this.router.navigate(['']);
       this.notificationService.success('Welcome to Shopify')
-    }, () => this.notificationService.error('Incorrect combination of email and password.'))
+    }, () => this.notificationService.error('Invalid credentials. Please, try again.'))
   }
 }
 

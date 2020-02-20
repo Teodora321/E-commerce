@@ -24,8 +24,8 @@
             Please, provide a valid name!
         </div>
         <br>
-        <button (click)="editUser(currentUser._id)"  type="submit" class="login__submit">Edit Profile</button>
+        <button (click)="editUser()" [disabled]="!profileForm.valid" type="submit" class="login__submit">Edit Profile</button>
         <button type="submit" (click)="deleteUser(currentUser._id)" class="login__submit">Delete Profile</button>
-        {{profileForm.value | json}}
+        
     </form>
 </div>

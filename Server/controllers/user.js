@@ -15,7 +15,7 @@ module.exports = {
             .catch(next)
     },
 
-    put: (req, res, next) => {
+    patch: (req, res, next) => {
         const id = req.params.id;
         const { firstName, lastName, email } = req.body;
         const query = { firstName, lastName, email }

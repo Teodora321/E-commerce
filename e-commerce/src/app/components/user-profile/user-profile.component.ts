@@ -13,12 +13,12 @@ import { NotificationService } from 'src/app/core/services/notification.service'
 })
 export class UserProfileComponent implements OnInit {
   profileForm: FormGroup;
-  //currentUser: IUser;
+  // currentUser: IUser;
 
-  get currentUser() {
-    return this.userService.currentUser
+   get currentUser(){
+      return this.userService.currentUser
   }
-  
+
 
   constructor(private userService: UserService,
     private fb: FormBuilder,
@@ -26,9 +26,9 @@ export class UserProfileComponent implements OnInit {
     private notificationService: NotificationService
   ) {
     this.profileForm = this.fb.group({
-      email: ['', [Validators.required]],
-      firstName: ['', [Validators.required, Validators.minLength(3)]],
-      lastName: ['', [Validators.required, Validators.minLength(3)]],
+      email: [this.currentUser.email, [Validators.required]],
+      firstName: [this.currentUser.firstName, [Validators.required, Validators.minLength(3)]],
+      lastName: [this.currentUser.lastName, [Validators.required, Validators.minLength(3)]],
     });
 
   }
@@ -40,6 +40,7 @@ export class UserProfileComponent implements OnInit {
   editUser(id) {
     let userValue = this.profileForm.value;
     this.userService.editUser(id, userValue).subscribe(() => {
+      //this.profileForm.setValue(userValue);
       this.router.navigate(['/']);
       this.notificationService.success('Account successfully updated!')
     }, () => {
