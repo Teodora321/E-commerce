@@ -20,8 +20,10 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit() {
   }
   addToCart() {
+    this.userService.isLogged ? 
     this.userService.addToCart(this.selectedProduct).subscribe(() => {
-    }) 
+      
+    }) : this.router.navigate(['/login'])
   }
 
 }

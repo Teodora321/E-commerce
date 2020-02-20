@@ -39,6 +39,10 @@ export class UserService {
       this.currentUser = null;
     }));
   }
+
+  getCurrentUser(id:number) {
+    return this.http.get<IUser>(`/user/${id}`)
+  }
   editUser(id:number, data) {
     return this.http.put(`user/${this.currentUser._id}`, data).pipe(tap(() => {
       console.log(id)

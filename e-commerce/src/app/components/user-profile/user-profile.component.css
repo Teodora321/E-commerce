@@ -10,7 +10,7 @@
 	position: relative;
 	z-index: 0;
 	margin: 4rem auto 0;
-  padding: 5rem 4rem 0 4rem;
+  	padding: 5rem 4rem 0 4rem;
 	width: 100%;
 	max-width: 525px;
 	min-height: 680px;
@@ -39,60 +39,6 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-.login-nav {
-	position: relative;
-	padding: 0;
-	margin: 0 0 6em 1rem;
-}
-
-.login-nav__item {
-	list-style: none;
-	display: inline-block;
-}
-
-.login-nav__item + .login-nav__item {
-	margin-left: 2.25rem;
-}
-
-.login-nav__item a {
-	position: relative;
-	color: rgba(255, 255, 255, 0.5);
-	text-decoration: none;
-	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 1.25rem;
-	padding-bottom: .5rem;
-	transition: .20s all ease;
-}
-
-.login-nav__item.active a,
-.login-nav__item a:hover{
-	color: #ffffff;
-	transition: .15s all ease;
-}
-
-.login-nav__item a:after {
-	content: '';
-  display: inline-block;
-  height: 10px;
-  background-color: rgb(255, 255, 255);
-  position: absolute;
-  right: 100%;
-  bottom: -1px;
-  left: 0;
-  border-radius: 50%;
-  transition: .15s all ease;
-}
-
-.login-nav__item a:hover:after,
-.login-nav__item.active a:after{
-	background-color:rgb(114, 202, 230);
-	height: 2px;
-	right: 0;
-	bottom: 2px;
-	border-radius: 0;
-	transition: .20s all ease;
-}
 .login__label {
 	display: block;
 	padding-left: 1rem;
@@ -104,17 +50,6 @@
 	text-transform: uppercase;
 	font-size: .75rem;
 	margin-bottom: 1rem;
-}
-
-.login__label--checkbox {
-	display: inline-block;
-	position: relative;
-	padding-left: 1.5rem;
-	margin-top: 2rem;
-	margin-left: 1rem;
-	color: #ffffff;
-	font-size: .75rem;
-	text-transform: inherit;
 }
 
 .login__input {

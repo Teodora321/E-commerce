@@ -5,9 +5,7 @@ body{
 img{
   max-width:100%;
 }
-.mobile{
-  display:none;
-}
+
 .button{
   display:block;
   background:#72cae6;

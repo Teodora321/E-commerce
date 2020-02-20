@@ -129,7 +129,6 @@ a:visited {
     transform: scale(.95, 1.05);
   }
 }
-/* CSS Error Page Responsive */
 
 @media only screen and (max-width:640px) {
   #error-text span {
