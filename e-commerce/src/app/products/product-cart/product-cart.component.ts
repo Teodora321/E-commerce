@@ -9,10 +9,11 @@ import { Subscription } from 'rxjs';
   templateUrl: './product-cart.component.html',
   styleUrls: ['./product-cart.component.css']
 })
-export class ProductCartComponent implements OnInit {
+export class ProductCartComponent implements OnInit,OnDestroy {
 
   products: any;
   total: number; 
+  subscription: Subscription
 
   get currentUser() {
     return this.userService.currentUser;
@@ -22,7 +23,7 @@ export class ProductCartComponent implements OnInit {
   private  readonly notificationService:NotificationService) { }
 
   ngOnInit() :void{
-     this.userService.getCartItems().subscribe((data) => {
+     this.subscription= this.userService.getCartItems().subscribe((data) => {
       this.products = Object.values(data);
       this.total = this.products
         .map(item => item.price)
@@ -33,6 +34,10 @@ export class ProductCartComponent implements OnInit {
     this.userService.deleteCartItems(this.products).subscribe(() => {
       this.notificationService.success('Order successful!')
     }, ()=> this.notificationService.error('Something went wrong! Try again!'))
+  }
+
+  ngOnDestroy(): void{
+    this.subscription.unsubscribe()
   }
 
   
