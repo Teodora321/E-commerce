@@ -18,7 +18,8 @@ export class ProductCartComponent implements OnInit {
   products: any;
   total: number; 
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+  private notificationService:NotificationService) { }
 
   ngOnInit() {
     this.userService.getCartItems().subscribe((data) => {
@@ -30,7 +31,8 @@ export class ProductCartComponent implements OnInit {
   }
   deleteCart() {
     this.userService.deleteCartItems(this.products).subscribe(() => {
-    })
+      this.notificationService.success('Order successful!')
+    }, ()=> this.notificationService.error('Something went wrong! Try again!'))
   }
 
 

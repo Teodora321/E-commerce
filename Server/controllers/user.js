@@ -28,15 +28,13 @@ module.exports = {
         const userId = req.params.id;
         const product = req.body;
         models.User.updateOne({ _id: userId }, { $push: { cart: product } })
-            .then(resp => console.log(resp))  
+            .then(resp => res.send(resp))  
     },
     
-
     getCartItems: (req, res, next) => {
         const userId = req.params.id;
         models.User.find({ _id: userId }).populate('cart')
             .then(data => {
-                console.log(data)
                 const { cart } = data[0]
                 res.send(cart)
             })
@@ -45,7 +43,7 @@ module.exports = {
     deleteCart: (req, res, next) => {
         const userId = req.params.id;
         models.User.findOneAndUpdate({ _id: userId }, { cart: [] })
-            .then(resp => console.log(resp))
+            .then(resp => res.send(resp))
     },
 
     delete: (req, res, next) => {
