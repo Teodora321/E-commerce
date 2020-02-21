@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from 'src/app/core/services/user.service';
 import { NotificationService } from 'src/app/core/services/notification.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -10,30 +11,31 @@ import { NotificationService } from 'src/app/core/services/notification.service'
 })
 export class ProductCartComponent implements OnInit {
 
+  products: any;
+  total: number; 
 
   get currentUser() {
     return this.userService.currentUser;
   }
 
-  products: any;
-  total: number; 
+  constructor(private readonly userService: UserService,
+  private  readonly notificationService:NotificationService) { }
 
-  constructor(private userService: UserService,
-  private notificationService:NotificationService) { }
-
-  ngOnInit() {
-    this.userService.getCartItems().subscribe((data) => {
+  ngOnInit() :void{
+     this.userService.getCartItems().subscribe((data) => {
       this.products = Object.values(data);
       this.total = this.products
         .map(item => item.price)
         .reduce((a, b) => a + b, 0)
     })
   }
-  deleteCart() {
+  deleteCart() :void{
     this.userService.deleteCartItems(this.products).subscribe(() => {
       this.notificationService.success('Order successful!')
     }, ()=> this.notificationService.error('Something went wrong! Try again!'))
   }
+
+  
 
 
 

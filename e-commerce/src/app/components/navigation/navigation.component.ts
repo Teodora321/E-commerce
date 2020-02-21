@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../../core/services/user.service';
 import { Router } from '@angular/router';
 import { NotificationService } from 'src/app/core/services/notification.service';
@@ -8,7 +8,7 @@ import { NotificationService } from 'src/app/core/services/notification.service'
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
 
   get isLogged() {
     return this.userService.isLogged;
@@ -17,8 +17,6 @@ export class NavigationComponent implements OnInit {
     private notificationService:NotificationService,
     private router: Router) { }
 
-  ngOnInit() {
-  }
   logout() {
     this.userService.logoutUser().subscribe(() => {
       this.router.navigate(['login']);

@@ -8,8 +8,8 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 
 export class AuthGuard implements CanActivate{
     constructor(
-        private userService: UserService,
-        private router:Router
+        private readonly userService: UserService,
+        private readonly router:Router
     ) { }
     
     canActivate(route: ActivatedRouteSnapshot, state:RouterStateSnapshot){

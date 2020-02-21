@@ -1,8 +1,9 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
 import { IProduct } from 'src/app/shared/interfaces/product';
 import { ProductService } from '../../core/services/product.service';
 import { trigger, style, animate, transition ,query, stagger } from '@angular/animations';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -20,28 +21,33 @@ import { Router } from '@angular/router';
     ])
   ]
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, OnDestroy {
   
   products: IProduct[];
   product: IProduct;
+  subscription: Subscription;
   
-  constructor(private productService: ProductService,
-   private router:Router) { }
+  constructor(
+    private readonly productService: ProductService,
+    private readonly router:Router) { }
 
-  ngOnInit() {
-    this.productService.getAllProducts().subscribe(data => {
+  ngOnInit() :void{
+    this.subscription = this.productService.getAllProducts().subscribe(data => {
       this.products = data.slice();
     })
   }
-  selectProductHandler(id: number) {
-    this.productService.getCurrentProduct(id).subscribe(data => {
+  selectProductHandler(id: number) :void{
+    this.subscription = this.productService.getCurrentProduct(id).subscribe(data => {
       this.productService.selectProduct(data)
       this.product = data;
       this.router.navigate([`product/products/detail/${id}`])
     })
     
   }
-  
+  ngOnDestroy() :void{
+    this.subscription.unsubscribe();
+  }
+   
   }
 
 

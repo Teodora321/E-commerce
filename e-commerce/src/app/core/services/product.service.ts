@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-   readonly selectedProduct: IProduct;
+  readonly selectedProduct: IProduct;
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
   
   getAllProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>('product/products')

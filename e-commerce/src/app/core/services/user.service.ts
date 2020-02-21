@@ -15,7 +15,7 @@ export class UserService {
 
   authCompleted$ = this.http.get('api/auth').pipe(shareReplay(1));
 
-  constructor(private http: HttpClient) {
+  constructor(private readonly http: HttpClient) {
     this.authCompleted$.subscribe((user: any) => {
       this.currentUser = user;
     }, () => {
@@ -26,7 +26,6 @@ export class UserService {
   loginUser(email: string, password: string) {
     return this.http.post('user/login', { email, password }).pipe(tap((user: any) => {
       this.currentUser = user;
-      console.log(user)
     }));
   }
 

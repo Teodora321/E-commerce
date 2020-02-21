@@ -11,7 +11,7 @@ import { NotificationService } from 'src/app/core/services/notification.service'
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css', '../../error-styles.css']
 })
-export class UserProfileComponent implements OnInit {
+export class UserProfileComponent {
   profileForm: FormGroup;
   // currentUser: IUser;
 
@@ -32,11 +32,7 @@ export class UserProfileComponent implements OnInit {
     });
 
   }
-  ngOnInit() {
-    console.log(this.currentUser)
-  }
-
-
+ 
   editUser(id) {
     let userValue = this.profileForm.value;
     this.userService.editUser(id, userValue).subscribe(() => {
