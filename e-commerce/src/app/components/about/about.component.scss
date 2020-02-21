@@ -1,0 +1,211 @@
+$moveup: up-two up-three up-four;
+
+
+
+$blue: #72cae6;
+$dark-blue:#1f3b58;
+$med-blue:#72cae6;
+$light-blue: rgb(48, 182, 223);
+
+
+html, body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+    width: 100%;
+    max-width: 100%
+}
+
+.row{
+  margin:0;
+}
+
+.about-content, .about-panel {
+    max-width: 50%;
+        width: 50%;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+    background-color: rgba(233, 150, 122, 0.2);
+    background-color:white;
+  overflow-y: auto;
+  height: 100vh;
+    max-width: 100%;
+}
+
+
+.about-panel {
+  padding: 0;
+  position: absolute;
+    top:0;
+    right:0;
+  -webkit-animation: example 1.2s both ease-in;
+  -moz-animation: example 1.2s both ease-in;
+  animation: example 1.2s both ease-in;
+    height: 100vh;
+    margin-top: 115px;
+
+    .photo-about{
+        position:relative;
+        top:0;
+        height: 100vh !important;
+        background-size: cover;
+        overflow: hidden
+    }
+}
+
+.about-info{
+    font-family: "Montserrat";
+  position: absolute;
+  z-index: 100100;
+  top:50%;
+  color: white;
+  text-align: center;
+  width: 100%;
+
+  .about-info-name{
+    width: 100%;
+    letter-spacing: 3px;
+    font-weight:500;
+        font-size: 2.5vw
+  }
+
+  .about-info-contact{
+    margin-top: 25px;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+    height: 130px;
+
+    h4{
+      margin-bottom: 5px;
+      font-weight:300;
+            font-size: 1.3vw
+    }
+
+    p{
+            font-size: 1.2vw;
+      font-weight: 100;
+      color:#b5b5b5;
+      margin-top: 10px;
+      margin-bottom: 0
+    }
+        
+        a {
+            margin-bottom: 5px;
+      font-weight:300;
+            font-size: 1.2vw;
+            color: $light-blue;
+        }
+  }
+}
+
+.about-content{
+  float:left;
+  padding-top:30px;
+  background: white;
+  color:$dark-blue;
+
+  p, blockquote{
+    font-size:13px;
+    line-height: 20px;
+    letter-spacing: 0.07em;
+  }
+
+  h1{
+    z-index:-1;
+    color:$med-blue;
+    text-align:center;
+    line-height: 90px;
+    font-size: 90px;
+    font-weight:200;
+    letter-spacing: -0.1em;
+    width: 95%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+
+    .about-me{
+        margin: 3% auto;
+        text-align: justify;
+        font-weight: 300;
+        width: 63%;
+
+        p{
+            line-height: 23px
+        }
+        .row{
+            height:100vh
+        }
+    }
+
+}
+
+.Synopsis-highlightLine {
+    width: 52px;
+    height: 4px;
+        background: $med-blue;
+    margin: 30px 0;
+}
+
+.Synopsis-highlight {
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    line-height: 25px !important;
+    width: 100%;
+        color: $med-blue;
+}
+
+/* Generates animations for cascading tiles */
+.about-panel{
+  @for $i from 1 through length($moveup) {
+  $item: nth($moveup, $i);
+  height: 100%;
+
+        .about-info-contact{
+            display:block;
+            margin: 30px
+        }
+
+        .about-info-contact .#{$item} {
+            -webkit-animation-delay: #{$i * 0.08s};
+            -moz-animation-delay: #{$i * 0.08s};
+            animation-delay: #{$i * 0.08s};
+            transition-timing-function: cubic-bezier(0.42,0,0.58,1);
+            display:block;
+        }
+    }
+}
+
+.perspective-container{
+  transform:matrix(1, 0, 0, 1, 0, 0) !important
+}
+
+.photo-about {
+  background: url("https://us.123rf.com/450wm/porechenskaya/porechenskaya1509/porechenskaya150900089/44775298-estilo-de-compras-bolsas-se%C3%B1ora-atractiva-sosteniendo-sobre-fondo-azul.jpg?ver=6") no-repeat center center;
+  //background-size: cover;
+  z-index: 45;
+  margin-top: 150px;
+
+}
+
+.hide-photo-filter {
+    position: relative;
+    top: 0;
+    background-color: rgba(12, 87, 156, 0.493);
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+}
+

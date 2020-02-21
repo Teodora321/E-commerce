@@ -5,8 +5,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AuthGuard } from './core/guards/auth.guard';
-import { ContactComponent } from './components/contact/contact.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 const routes: Routes = [
@@ -16,9 +16,9 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'contact',
+    path: 'about',
     pathMatch: 'full',
-    component:ContactComponent
+    component:AboutComponent
   },
   {
     path: 'login',

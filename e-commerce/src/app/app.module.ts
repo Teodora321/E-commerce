@@ -15,10 +15,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ContactComponent } from './components/contact/contact.component';
 import { ProductsModule } from './products/products.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +30,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     NotFoundComponent,
     LoginComponent,
     RegisterComponent,
-    ContactComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    AboutComponent
 
   ],
   imports: [
