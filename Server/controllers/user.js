@@ -47,7 +47,7 @@ module.exports = {
     },
 
     delete: (req, res, next) => {
-        const id = req.params.id;
+        const id = req.params.id
         models.User.deleteOne({ _id: id })
             .then((removedUser) => res.send(removedUser))
             .then(() => {
