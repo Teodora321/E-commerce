@@ -40,8 +40,8 @@ import { AboutComponent } from './components/about/about.component';
     ReactiveFormsModule,
     HttpClientModule,
     CoreModule,
-    SharedModule,
     ProductsModule,
+    SharedModule,
     AppRoutingModule,
 
   ],

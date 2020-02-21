@@ -1,4 +1,4 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { IProduct } from 'src/app/shared/interfaces/product';
 import { ProductService } from '../../core/services/product.service';
 import { trigger, style, animate, transition ,query, stagger } from '@angular/animations';

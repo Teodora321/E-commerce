@@ -21,8 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   }
   addToCart() {
     this.userService.isLogged ? 
-    this.userService.addToCart(this.selectedProduct).subscribe(() => {
-      
+      this.userService.addToCart(this.selectedProduct).subscribe(() => {      
     }) : this.router.navigate(['/login'])
   }
 

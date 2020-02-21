@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { UserService } from 'src/app/core/services/user.service';
+import { NotificationService } from 'src/app/core/services/notification.service';
 
 
 @Component({
@@ -17,8 +18,7 @@ export class ProductCartComponent implements OnInit {
   products: any;
   total: number; 
 
-  constructor(private userService: UserService,
-  ) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getCartItems().subscribe((data) => {
