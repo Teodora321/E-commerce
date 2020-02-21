@@ -22,6 +22,7 @@ Following image can get idea about what are those.
 ```sh
 git clone https://github.com/Teodora321/E-commerce.git
 ```
+Install dependencies in both frontend and backend folders
 ```sh
 cd E-commerce
 npm install
@@ -31,12 +32,12 @@ npm install
 cd Server
 npm install
 ```
-Install dependencies in both frontend and backend folders
+Start frontend server and backend server 
+
 ```sh
 cd Server
 node index.js
 ```
-Start frontend server and backend server 
 ```sh
 cd E-commerce
 ng serve --open
