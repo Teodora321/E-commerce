@@ -7,12 +7,12 @@ export class NotificationService {
     private toastr: ToastrService,
   ) { }
 
-  success(message: string, title?: string) {
-    this.toastr.success(message, title);
+  success(message: string) {
+    this.toastr.success(message);
   }
 
-  error(message: string, title?: string) {
-    this.toastr.error(message, title);
+  error(message: string) {
+    this.toastr.error(message);
   }
 
 }
