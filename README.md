@@ -4,6 +4,7 @@ This is basic application created using MEAN technologies.
 
 -Shopify is a single-page application that allows the users to have access to the shopping list page and details of the current product. Anonymous users can also have access to the about page and home page.
 
+
 -Registered users are able to access their own cart and make orders. -Registered users are able to access their own profile and edit it and delete it. 
 
 
