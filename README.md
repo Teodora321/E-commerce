@@ -4,7 +4,6 @@ This is basic application created using MEAN technologies.
 
 -Shopify is a single-page application that allows the users to have access to the shopping list page and details of the current product. Anonymous users can also have access to the about page and home page.
 
-
 -Registered users are able to access their own cart and make orders. -Registered users are able to access their own profile and edit it and delete it. 
 
 
@@ -23,7 +22,7 @@ Following image can get idea about what are those.
 ```sh
 git clone https://github.com/Teodora321/E-commerce.git
 ```
-Install dependencies in both frontend and backend folders
+Install dependencies in both frontend and backend folders:
 ```sh
 cd E-commerce
 npm install
@@ -33,7 +32,7 @@ npm install
 cd Server
 npm install
 ```
-Start frontend server and backend server 
+Start frontend server and backend server:
 
 ```sh
 cd Server
