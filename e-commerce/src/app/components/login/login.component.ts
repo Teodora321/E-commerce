@@ -23,7 +23,12 @@ export class LoginComponent {
     })
   }
 
-  
+  loginUser({ email, password }: { email: string, password: string }) :void {
+    this.userService.loginUser(email, password).subscribe(() => {
+      this.router.navigate(['/']);
+      this.notificationService.success('Welcome to Shopify')
+    }, () => this.notificationService.error('Invalid credentials. Please, try again.'))
+  }
 }
 
 
