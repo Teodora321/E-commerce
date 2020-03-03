@@ -1,4 +1,4 @@
-# MEAN Stack Аpplication Shopify
+# MEAN Stack Аpplication - Shopify
 
 This is basic application created using MEAN technologies.
 
