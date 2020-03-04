@@ -33,7 +33,6 @@
   height: 300px;
   float: right;
 }
-
 @media only screen and (max-width: 500px) {
     #information {
         width: 100%;
@@ -41,7 +40,6 @@
         margin: 0 auto;
     }
 }
-
 
 .titleBorder {
   border-bottom: 1px solid #cccccc;
@@ -62,8 +60,6 @@
 .stayInline {
   display: inline;
 }
-
-
 .login__submit {
 	color: #ffffff;
 	font-size: 1rem;
@@ -79,7 +75,6 @@
 	border: none;
 	cursor: pointer;
 }
-
 .login__submit:hover {
 	background-color: rgba(17, 97, 237, 1);
 }
