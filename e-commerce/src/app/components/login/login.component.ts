@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { NotificationService } from 'src/app/core/services/notification.service';
 
 @Component({
-  selector: 'app-login',  
+  selector: 'app-login',    
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css',  '../../error-styles.css']
 })
