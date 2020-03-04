@@ -6,7 +6,9 @@ import { NotificationService } from 'src/app/core/services/notification.service'
 
 @Component({
   selector: 'app-login',
+
   templateUrl: './login.component.html',
+  
   styleUrls: ['./login.component.css',  '../../error-styles.css']
 })
 export class LoginComponent {
