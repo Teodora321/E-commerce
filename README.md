@@ -1,6 +1,6 @@
 # MEAN Stack Аpplication - Shopify
 
-This is basic application created using MEAN technologies.
+This is basic application created using MEAN technologies (Mongo DB, Express.js, Angular, Node.js).
 
 -Shopify is a single-page application that allows the users to have access to the shopping list page and details of the current product. Anonymous users can also have access to the about page and home page.
 
