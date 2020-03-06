@@ -12,11 +12,6 @@ This is basic application created using MEAN technologies (Mongo DB, Express.js,
 * A - Angular js
 * N - Node js
 
-Following image can get idea about what are those.
-
-
-[![N|Solid](https://www.wedevz.com/wp-content/uploads/2016/08/mean.png)](https://nodesource.com/products/nsolid)
-
 
 # Run Application
 
