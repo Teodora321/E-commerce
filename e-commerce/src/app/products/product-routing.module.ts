@@ -29,8 +29,5 @@ const routes: Routes = [
 
         ]
     },
-
-
 ];
-
 export const ProductRoutingModule = RouterModule.forChild(routes);
