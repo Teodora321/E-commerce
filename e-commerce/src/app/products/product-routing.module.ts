@@ -26,7 +26,6 @@ const routes: Routes = [
                     isLogged: true
                 }
             },
-
         ]
     },
 ];
